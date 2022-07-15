@@ -1,0 +1,3 @@
+[submodule "projects/engx/engx-responsive-table"]
+	path = projects/engx/engx-responsive-table
+	url = https://github.com/EngFelix/engx-responsive-table.git
