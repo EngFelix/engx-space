@@ -33,6 +33,100 @@
           }
         }
       }
+    },
+    "@engx/engx-responsive-table-test": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/engx/engx-responsive-table-test",
+      "sourceRoot": "projects/engx/engx-responsive-table-test/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/engx/engx-responsive-table-test",
+            "index": "projects/engx/engx-responsive-table-test/src/index.html",
+            "main": "projects/engx/engx-responsive-table-test/src/main.ts",
+            "polyfills": "projects/engx/engx-responsive-table-test/src/polyfills.ts",
+            "tsConfig": "projects/engx/engx-responsive-table-test/tsconfig.app.json",
+            "assets": [
+              "projects/engx/engx-responsive-table-test/src/favicon.ico",
+              "projects/engx/engx-responsive-table-test/src/assets"
+            ],
+            "styles": [
+              "projects/engx/engx-responsive-table-test/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/engx/engx-responsive-table-test/src/environments/environment.ts",
+                  "with": "projects/engx/engx-responsive-table-test/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "@engx/engx-responsive-table-test:build:production"
+            },
+            "development": {
+              "browserTarget": "@engx/engx-responsive-table-test:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "@engx/engx-responsive-table-test:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/engx/engx-responsive-table-test/src/test.ts",
+            "polyfills": "projects/engx/engx-responsive-table-test/src/polyfills.ts",
+            "tsConfig": "projects/engx/engx-responsive-table-test/tsconfig.spec.json",
+            "karmaConfig": "projects/engx/engx-responsive-table-test/karma.conf.js",
+            "assets": [
+              "projects/engx/engx-responsive-table-test/src/favicon.ico",
+              "projects/engx/engx-responsive-table-test/src/assets"
+            ],
+            "styles": [
+              "projects/engx/engx-responsive-table-test/src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
     }
   }
 }
