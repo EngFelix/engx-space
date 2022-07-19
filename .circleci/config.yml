@@ -14,11 +14,8 @@ jobs:
       #    - v1-dependencies-{{ checksum "package-lock.json" }}
       #    - v1-dependencies-
       - run:
-          name: sync submodules
-          command: git submodule sync --recursive
-      - run:
-          name: init submodules
-          command: git submodule --recursive --init
+          name: sync and update submodules
+          command: git submodule sync --recursive && git submodule update --recursive --init
       - run:
           name: install dependencies
           command: npm install
