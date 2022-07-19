@@ -6,8 +6,10 @@ jobs:
   build:
     working_directory: ~/project
     docker:
-      - image: cimg/node:18.4.0
+      - image: cimg/node:18.4.0-browsers
     steps:
+      - browser-tools/install-chrome
+      - browser-tools/install-chromedriver
       - checkout
       - restore_cache:
           keys:
