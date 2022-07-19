@@ -7,6 +7,7 @@ defaults: &defaults
   working_directory: ~/repo
   docker:
     - image: cimg/node:18.4.0-browsers
+  resource_class: small
 jobs:
   build_and_test:
     <<: *defaults
@@ -74,6 +75,6 @@ workflows:
             - build_and_test
           filters:
             tags:
-              only: /^v.*/
+              only: /^v(\d+\.)?(\d+\.)?(\*|\d+)$/
             branches:
               ignore: /.*/
