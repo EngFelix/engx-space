@@ -3,11 +3,13 @@
 version: 2.1
 orbs:
   browser-tools: circleci/browser-tools@1.3.0
+defaults: &defaults
+  working_directory: ~/repo
+  docker:
+    - image: cimg/node:18.4.0-browsers
 jobs:
   build:
-    working_directory: ~/project
-    docker:
-      - image: cimg/node:18.4.0-browsers
+    <<: *defaults
     steps:
       - browser-tools/install-chrome
       - browser-tools/install-chromedriver
@@ -45,9 +47,10 @@ jobs:
           paths:
             - .
   publish:
-    docker:
-      - image: cimg/node:18.4.0-browsers
+    <<: *defaults
     steps:
+      - attach_workspace:
+          at: ~/project
       - run:
           name: Publish to NPM
           command: |
