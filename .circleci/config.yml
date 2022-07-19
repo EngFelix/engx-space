@@ -8,7 +8,7 @@ defaults: &defaults
   docker:
     - image: cimg/node:18.4.0-browsers
 jobs:
-  build:
+  build_and_test:
     <<: *defaults
     steps:
       - browser-tools/install-chrome
@@ -43,7 +43,7 @@ jobs:
               npm run build-engx-rt
             fi
       - persist_to_workspace:
-          root: .
+          root: ~/repo
           paths:
             - .
   publish:
@@ -64,7 +64,7 @@ workflows:
   version: 2
   build:
     jobs:
-      - build:
+      - build_and_test:
           filters:
             branches:
               only:
@@ -76,4 +76,4 @@ workflows:
             tags:
               only: /^v.*/
             branches:
-              only: main
+              ignore: /.*/
