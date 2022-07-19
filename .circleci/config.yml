@@ -9,10 +9,10 @@ jobs:
       - image: circleci/node:12-browsers
     steps:
       - checkout
-      #- restore_cache:
-      #    keys:
-      #    - v1-dependencies-{{ checksum "package-lock.json" }}
-      #    - v1-dependencies-
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package-lock.json" }}
+            - v1-dependencies-
       - run:
           name: sync and update submodules
           command: git submodule sync --recursive && git submodule update --recursive --init
@@ -25,7 +25,7 @@ jobs:
             - node_modules
       - run:
           name: Test
-          command: ng test
+          command: npm run test
       - run:
           name: build
           command: |
