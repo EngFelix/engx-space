@@ -50,7 +50,7 @@ jobs:
     <<: *defaults
     steps:
       - attach_workspace:
-          at: ~/project
+          at: ~/repo
       - run:
           name: Publish to NPM
           command: |
