@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test --no-watch --no-progress --browsers=ChromeHeadless",
-    "build-engx-rt": "ng build @engx/engx-responsive-table"
+    "build-engx-rt": "ng build @engx/engx-responsive-table",
+    "publish-engx-rt": "cd dist/engx/engx-responsive-table && npm publish --access=public"
   },
   "private": true,
   "dependencies": {
