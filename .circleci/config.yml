@@ -71,7 +71,7 @@ workflows:
                 - main
       - publish:
           requires:
-            - build
+            - build_and_test
           filters:
             tags:
               only: /^v.*/
