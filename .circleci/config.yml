@@ -74,9 +74,9 @@ workflows:
           requires:
             - build_and_test
           filters:
-            tags:
-              #only: /^v(\d+\.)?(\d+\.)?(\*|\d+)$/ temporarily disabled
-              only: /.*/
+#            tags:
+#              #only: /^v(\d+\.)?(\d+\.)?(\*|\d+)$/ temporarily disabled
+#              only: /.*/
             branches:
               only:
                 - main
