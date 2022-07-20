@@ -54,7 +54,7 @@ jobs:
           at: ~/repo
       - run:
           name: Authenticate with registry
-          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
+          command: cd dist/engx/engx-responsive-table && echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
       - run:
           name: Publish to NPM
           command: |
@@ -75,7 +75,7 @@ workflows:
             - build_and_test
           filters:
             tags:
-              only: /^v(\d+\.)?(\d+\.)?(\*|\d+)$/
+              #only: /^v(\d+\.)?(\d+\.)?(\*|\d+)$/ temporarily disabled
             branches:
               only:
                 - main
