@@ -44,14 +44,11 @@ jobs:
           root: ~/repo
           paths:
             - .
-  publish:
+  publish_engx_rt_to_npm:
     <<: *defaults
     steps:
       - attach_workspace:
           at: ~/repo
-      - run:
-          name: Authenticate with registry
-          command: echo "//packagecloud.io/armando/node-test-package/npm/:_authToken=$npm_TOKEN" > ~/repo/.npmrc
       - run:
           name: Authenticate with registry
           command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/dist/engx/engx-responsive-table/.npmrc
@@ -67,7 +64,7 @@ workflows:
             branches:
               only:
                 - main
-      - publish:
+      - publish_engx_rt_to_npm:
           requires:
             - build_and_test
           filters:

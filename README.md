@@ -4,7 +4,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Insights Snapshot
 
-[![InsightsSnapshot](https://dl.circleci.com/insights-snapshot/gh/EngFelix/engx-space/main/build_test_and_publish_on_version_increment/badge.svg)](https://app.circleci.com/insights/github/EngFelix/engx-space/workflows/build_test_and_publish_on_version_increment?branch=main)
+CircleCI Build: [![CircleCI](https://dl.circleci.com/status-badge/img/gh/EngFelix/engx-space/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/EngFelix/engx-space/tree/main)
+
+[![CircleCI](https://dl.circleci.com/insights-snapshot/gh/EngFelix/engx-space/main/build_test_and_publish_on_version_increment/badge.svg?window=24h)](https://app.circleci.com/insights/github/EngFelix/engx-space/workflows/build_test_and_publish_on_version_increment/overview?branch=main&reporting-window=last-24-hours&insights-snapshot=true)
 
 ## Development server
 
