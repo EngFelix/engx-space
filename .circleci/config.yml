@@ -76,6 +76,7 @@ workflows:
           filters:
             tags:
               #only: /^v(\d+\.)?(\d+\.)?(\*|\d+)$/ temporarily disabled
+              only: /.*/
             branches:
               only:
                 - main
