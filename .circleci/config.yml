@@ -60,7 +60,7 @@ jobs:
           command: echo "//packagecloud.io/armando/node-test-package/npm/:_authToken=$npm_TOKEN" > ~/repo/.npmrc
       - run:
           name: Authenticate with registry
-          command: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/repo/dist/engx/engx-responsive-table/.npmrc && echo "//registry.npmjs.org/:_authToken=$npm_TOKEN"
+          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/dist/engx/engx-responsive-table/.npmrc && echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN"
       - run:
           name: Publish to NPM
           command: |
