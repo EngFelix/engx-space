@@ -52,9 +52,15 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/repo
+#      - run:
+#          name: Set registry URL
+#          command: npm set registry https://packagecloud.io/armando/node-test-package/npm/
       - run:
           name: Authenticate with registry
-          command: cd dist/engx/engx-responsive-table && echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
+          command: echo "//packagecloud.io/armando/node-test-package/npm/:_authToken=$npm_TOKEN" > ~/repo/.npmrc
+      - run:
+          name: Authenticate with registry
+          command: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/repo/dist/engx/engx-responsive-table/.npmrc && echo "//registry.npmjs.org/:_authToken=$npm_TOKEN"
       - run:
           name: Publish to NPM
           command: |
